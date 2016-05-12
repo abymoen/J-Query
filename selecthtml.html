@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Select html</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        
+        
+        <style>
+            
+            #face {
+                background-color: #0784f2;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="face">
+            <p>Facebook is <span    id="great">great</span></p>
+            <p>Paragraph 2</p>
+        </div>
+        <p>A sibling</p>
+        <a href="http://www.google.com" target="_blank">This is a link</a>
+        <ul>
+            <li>Lion</li>
+            <li>Tiger</li>
+            <li>Panther</li>
+        </ul>
+        <table>
+            <tr><th>Phone Make</th><th>Model</th></tr>
+            <tr><td>Apple</td><td>Iphone 4</td></tr>
+            <tr><td>Apple</td><td>Iphone 5</td></tr>
+            <tr><td>Apple</td><td>Iphone 6</td></tr>
+            <tr><td>Apple</td><td>Iphone 7</td></tr>
+            <tr><td>Apple</td><td>Iphone 7s</td></tr>
+        </table>
+        <p>Type your name: <input><button type="submit">Submit</button></p>
+        <script>
+            $(function() {
+                $("*").css("font-size", "20px");
+                
+                $("div > p").css("text-align", "center");
+                
+                $("div ~ p").css("text-align", "center");
+                $("div ~ p").css("font-size", "150%");
+                
+                $("#great").css("color", "black");
+                
+                $("p:first-child").css("text-decoration","underline");
+                
+                $("[href]").css("color","grey");
+                
+                $("li:first-child").css("background-color", "#aea418");
+                
+                $("li:last-child").css("background-color", "#698b27");
+                
+                $("tr:even").css("background-color", "#e28c1c");
+                
+                $("tr:odd").css("background-color", "#1f83d0");
+                
+                $(":input").css("background-color", "#45a4ec");
+                
+                $("html:has(table)").css("background-color", "#8bc6f2");
+            })
+        </script>
+    </body>
+
+</html>
