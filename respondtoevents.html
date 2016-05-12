@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Events</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        
+        
+        <style>
+            
+            #face {
+                background-color: #0784f2;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="face">
+            <p>Facebook is <span    id="great">great</span></p>
+            <p>Paragraph 2</p>
+        </div>
+        <p>A sibling</p>
+        <a href="http://www.google.com" target="_blank">This is a link</a>
+        <ul>
+            <li>Lion</li>
+            <li>Tiger</li>
+            <li>Panther</li>
+        </ul>
+        <table>
+            <tr><th>Phone Make</th><th>Model</th></tr>
+            <tr><td>Apple</td><td>Iphone 4</td></tr>
+            <tr><td>Apple</td><td>Iphone 5</td></tr>
+            <tr><td>Apple</td><td>Iphone 6</td></tr>
+            <tr><td>Apple</td><td>Iphone 7</td></tr>
+            <tr><td>Apple</td><td>Iphone 7s</td></tr>
+        </table>
+        <p>Type your name: <input><button type="submit" id="submit">Submit</button></p>
+        <script>
+            $(function () {
+                $("p").click(function () {
+                    $(this).css("background-color", "#b18cf2");
+                });
+                
+                $("p").mouseover(function() {
+                    $(this).css("font-size", "150%");
+                });
+                
+                $("p").mouseout(function () {
+                    $(this).css("font-size","100%");
+                });
+                
+                $("input").focus(function () {
+                    $(this).css("background-color", "#c5abf7");
+                });
+                
+                $("input").blur(function () {
+                    $(this).css("background-color", "#abf7bf");
+                });
+                
+                $("input").keyup(function () {
+                    $(this).css("color", "#e4f7ab");
+                });
+                
+                $("#submit").click(function () {
+                    $("input").css("background-color", "#FFFFFF");
+                    $("input").val("");
+                });
+            });
+        </script>
+    </body>
+
+</html>
