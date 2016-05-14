@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Events</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        
+        
+        <style>
+            
+            #face {
+                background-color: #0784f2;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+            
+            #app {
+                background-color: #8e9fa8;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+            
+            #mic {
+                background-color: #9a78f1;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+            
+            #drop {
+                background-color: #fbf164;
+                width: 100%;
+                height: 300px;
+                margin-top: 3%
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="face" class="ui-corner-all">
+            <p>Facebook is <span    id="great1">great</span></p>
+        </div>
+        
+        <div id="app" class="ui-corner-all">
+            <p>Apple is <span    id="great2">great</span></p>
+            <ul id="glist">
+                <li>eggs</li>
+                <li>milk</li>
+                <li>bread</li>
+            </ul>
+        </div>
+        
+        <div id="mic" class="ui-corner-all">
+            <p>Microsoft is <span    id="great3">great</span></p>
+        </div>
+        
+        <div id="drop" class="ui-corner-all">
+        <p>You can drop things here</p>
+        </div>
+        <script>
+            $(function() {
+                $("#face").draggable();
+                $("#app").draggable({axis: "y"});
+                
+                $("#mic").draggable({revert: true, start: function() {
+                    $("#face").css("background-color", "#434bd4");
+                }, drag:function() {
+                    $("#mic").css("background-color", "#43d487");
+                }, stop: function() {
+                    $("#face").css("background-color", "#0784f2" );
+                    
+                    $("#mic").css("background-color", "#9a78f1");
+                }});
+                
+               $("#glist").find("li").draggable({helper: "clone",appentTo: "body"});
+                $("#drop").droppable({drop: function(event, ui) {
+                    $(this).css("background-color", "#fb6464");
+                    $(this).find("p").remove();
+                    
+                    $("<div></div>").text(ui.draggable.text()).appendTo(this);
+                }, accept: "#glist li"});
+            });
+        </script>
+    </body>
+
+</html>
