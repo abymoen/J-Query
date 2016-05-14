@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Events</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        
+        
+        <style>
+            
+            #face {
+                background-color: #0784f2;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+            
+            #app {
+                background-color: #8e9fa8;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+            
+            #mic {
+                background-color: #9a78f1;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <button id="changeface">Fade in Facebook</button>
+        <button id="appfade">Fade Apple</button>
+        <button id="animate">Animate</button>
+        <div id="face">
+            <p>Facebook is <span    id="great1">great</span></p>
+        </div>
+        
+        <div id="app">
+            <p>Apple is <span    id="great2">great</span></p>
+        </div>
+        
+        <div id="mic">
+            <p>Microsoft is <span    id="great3">great</span></p>
+        </div>
+        <p id="valpar">Enter your name: <input id="val"></p>
+        <script>
+            $(function() {
+                $("#face").click(function () {
+                    $("#face").fadeOut();
+                });
+                
+                $("#changeface").click(function() {
+                    $("#face").fadeIn();
+                });
+                
+                $("#appfade").click( function () {
+                    $("#app").fadeToggle();
+                });
+                
+                $("#animate").click(function() {
+                    $("#mic").animate({width:"50%", height:"50%", opacity: "0.5"}, 1000);
+                    
+                    $("#face").delay(1000).animate({width: "50%", height:"50%"}, "slow");
+                    
+                    $("#app").animate({width:"50%", height:"50%", opacity: "0.5"}, 1000);
+                });
+            });
+        </script>
+    </body>
+
+</html>
