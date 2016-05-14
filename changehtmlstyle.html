@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Events</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        
+        
+        <style>
+            
+            #face {
+                background-color: #0784f2;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+            
+            #app {
+                background-color: #8e9fa8;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+            
+            #mic {
+                background-color: #9a78f1;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <button id="changeface">Change Facebook</button>
+        <button id="changeface2">Change again</button>
+        <div id="face">
+            <p>Facebook is <span    id="great1">great</span></p>
+        </div>
+        
+        <div id="app">
+            <p>Apple is <span    id="great2">great</span></p>
+        </div>
+        
+        <div id="mic">
+            <p>Microsoft is <span    id="great3">great</span></p>
+        </div>
+        <p id="valpar">Enter your name: <input id="val"></p>
+        <script>
+            $(function () {
+               $("#changeface").click(function () {
+                   $("#face").css("width","50%");
+               });
+                
+                $("#changeface2").click(function() {
+                   
+                   var ranwidth = 100*Math.random() - 10;
+                    $("#face").css("width", ranwidth + "%")
+                });
+                
+                window.alert($("#face").innerHeight());
+                
+                $("#mic").hover(function(){
+                   var up1 = Math.random()*100;
+                   
+                   var left1 = Math.random() *100;
+                    $("#mic").css({'margin-top': up1, 'margin-left': left1});
+                });
+                
+                $("#app").dblclick(function () {
+                    $("#app").hide();
+                });
+            });
+        </script>
+    </body>
+
+</html>
