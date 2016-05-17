@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Events</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <style>
+        
+        
+        <style>
+            
+            #face {
+                background-color: #0784f2;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+            
+            #app {
+                background-color: #8e9fa8;
+                width: auto;
+                height: auto;
+                color: white;
+            }
+            
+            #mic {
+                background-color: #9a78f1;
+                width: auto;
+                height: auto;
+                color: white;
+            }
+            
+            li {
+                font-size: 250%;
+                margin: 1%;
+                text-align: center;
+                background-color: #b8a1a1;
+            }
+            
+            #list .ui-selecting{
+                background: #b0b8a1;
+            }
+            
+            #list .ui-selected {
+                background: #b0b8a1;
+            }
+            
+            .carmakes {
+                min-height: 20px;
+            }
+        
+        </style>
+    </head>
+    <body>
+        
+        <div id="face">
+            <p>Facebook is <span    id="great1">great</span></p>
+        </div>
+        
+        <div id="app">
+            <ul id="list" class="carmakes">
+                <li>Audi</li>
+                <li>BMW</li>
+                <li class="notsortable">Mercedes</li>
+            </ul>
+        </div>
+        
+        <div id="mic">
+            <p>Microsoft is <span    id="great3">great</span></p>
+            <ul id="list2" class="carmakes">
+                <li>Lambo</li>
+                <li>Ford</li>
+                <li class="notsortable">Toyota</li>
+            </ul>
+        </div>
+        
+        <script>
+            $(function () {
+                $("#list").sortable({placeholder: "ui-state-error" , cancel: ".notsortable"});
+                
+                $("#list2").sortable();
+                
+                $("#list, #list2").sortable({connectWith: ".carmakes"});
+            })
+        </script>
+    </body>
+
+</html>
