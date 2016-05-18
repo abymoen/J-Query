@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Events</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <style>
+            
+            #face {
+                background-color: #0784f2;
+                width: auto;
+                height: 20%;
+                color: white;
+            }
+            
+            #app {
+                background-color: #8e9fa8;
+                width: 100%;
+                height: 20%;
+                color: white;
+            }
+            
+            #mic {
+                background-color: #9a78f1;
+                width: auto;
+                height: 20%;
+                color: white;
+            }
+            
+            .ui-autocomplete {
+                max-height: 10%;
+                overflow-y: auto;
+                max-width: 10%
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="face">
+            <p>Facebook is <span    id="great1">great</span></p>
+            <div id="checkform">
+                <input type="checkbox" id="check2">
+                <label for="check2">Audi</label>
+                <input type="checkbox" id="check3">
+                <label for="check3">BMW</label>
+                <input type="checkbox" id="check4">
+                <label for="check4">Mercedes</label>
+            </div>
+        </div>
+        
+        <div id="appcont">
+        <div id="app">
+            <p>Apple is <span    id="great2">great</span></p>
+            <input type="checkbox" id="check1">
+            <label for="check1">Checkbox</label>
+        </div>
+        </div>
+        
+        <div id="mic">
+            <p>Microsoft is <span    id="great3">great</span></p>
+            <form>
+                <div id="radiobox">
+                    <input type="radio" id="rad1" name= "radiobox">
+                    <label for="rad1">Ford</label>
+                    <input type="radio" id="rad2" name= "radiobox">
+                    <label for="rad2">Toyota</label>
+                    <input type="radio" id="rad3" name= "radiobox">
+                    <label for="rad3">Jeep</label>
+                
+                </div>
+            </form>
+        </div>
+        <button id="button1">Button1</button>
+        <button id="button2">Button2</button>
+        <button id="button3">Button3</button>
+        <script>
+            $(function() {
+                $("#button1").button();
+                $("#button2").button({icons: {primary: "ui-icon-folder-open"}, text: false});
+                
+                $("#button3").button({icons: {primary: "ui-icon-mail-closed", secondary: "ui-icon-carat-1-e"}, text: false});
+                
+                $("#check1").button();
+                
+                $("#checkform").buttonset();
+                
+                $("#radiobox").buttonset();
+            })
+        </script>
+    </body>
+
+</html>
