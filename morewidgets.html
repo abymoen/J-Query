@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Events</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <style>
+            
+            #face {
+                background-color: #0784f2;
+                width: auto;
+                height: auto;
+                color: white;
+            }
+            
+            #app {
+                background-color: #8e9fa8;
+                width: 100%;
+                height: auto;
+                color: white;
+            }
+            
+            #mic {
+                background-color: #9a78f1;
+                width: auto;
+                height: auto;
+                color: white;
+            }
+            #slideval {
+                border: 0;
+                font-weight: bold;
+            }
+            
+            #slideval2 {
+                border: 0;
+                font-weight: bold;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="face" title="The Face">
+            <p>Facebook is <span    id="great1">great</span></p>
+        </div>
+        
+        <div id="appcont">
+        <div id="app">
+            <p>Apple is <span    id="great2">great</span></p>
+        </div>
+        </div>
+        
+        <div id="mic">
+            <p>Microsoft is <span    id="great3">great</span></p>
+            
+            <label for="myinput">Enter a value: </label>
+            <input id="myinput" name="myinput" value="30">
+            
+            <ul>
+                <li><a href="#tab1">tab 1</a></li>
+                <li><a href="#tab2">tab 2</a></li>
+                <li><a href="#tab3">tab 3</a></li>
+            </ul>
+            
+            <div id="tab1"><p>content 1</p></div>
+            <div id="tab2"><p>content 2</p></div>
+            <div id="tab3"><p>content 3</p></div>
+        </div>
+        
+        <script>
+            $(function() {
+                $("#myinput").spinner({
+                    min: 0,
+                    max: 100,
+                    step: 2
+                });
+                
+                $("#mic").tabs({
+                    collapsible: true,
+                    event: "mouseover"
+                    
+                });
+                
+                $("#mic").tabs().find(".ui-tabs-nav").sortable({axis: "x"});
+                
+                $("#face").tooltip({
+                    show: {effect: "slideDown"}
+                });
+            });
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Events</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/sunny/jquery-ui.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        
+        
+        <style>
+            
+            #face {
+                background-color: #0784f2;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+            
+            #app {
+                background-color: #8e9fa8;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+            
+            #mic {
+                background-color: #9a78f1;
+                width: auto;
+                height: 100px;
+                color: white;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="face" class="ui-corner-all ui-widget-content">
+            <p>Facebook is <span    id="great1">great</span></p>
+        </div>
+        
+        <div id="app">
+            <p>Apple is <span    id="great2">great</span></p>
+        </div>
+        
+        <div id="mic">
+            <p>Microsoft is <span    id="great3">great</span></p>
+        </div>
+        <p id="valpar">Enter your name: <input id="val"></p>
+        
+        <div class="ui-state-error">
+            <p>Error message</p>
+        </div>
+        <script>
+            $(function() {
+                $("#face").draggable();
+            })
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Select menu</title>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        
+        <style>
+            #face {
+                background-color: #5b9fdb;
+            }
+            
+            #option {
+                width: 35%;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="face">
+            <label for="option">Select your biggest strength:<br> </label>
+    <select id="option">
+        <optgroup label="group1"><option>Motivation</option>
+        <option selected>Creativity</option></optgroup>
+        <optgroup label="group2"><option>Communication</option>
+        <option>Integrity</option></optgroup>
+    </select>
+        </div>
+    
+        <script>
+            $("#option").selectmenu();
+        
+        </script>
+    </body>
+
+
+
+
+</html>

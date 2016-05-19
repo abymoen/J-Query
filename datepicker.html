@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Date Picker</title>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        
+        <style>
+            #face {
+                background-color: #5b9fdb;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="face">
+            <p>Flight departue date: <input id="depart"></p>
+            <p>Flight return date: <input id="return"></p>
+        </div>
+    
+        <script>
+            $(function() {
+                $("#depart").datepicker({showAnim: "slideDown", changeYear: true, numberOfMonths: 2, dateFormat: "MM/dd/yy", minDate: +1});
+                
+                $("#return").datepicker({showAnim: "fadeIn", dateFormat: "dd/mm/yy",  showOn: "button", buttonImage: "images/calendar.png",
+                buttonImageOnly: true, buttonText: "Choose return date", onClose: function(selectedDate) {
+                    $("#depart").datepicker("option", "minDate", selectedDate);
+                }});
+                
+            })
+        
+        
+        </script>
+    </body>
+
+
+
+
+</html>

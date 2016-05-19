@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dialogs</title>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        
+        <style>
+            
+        
+        </style>
+    </head>
+    <body>
+       <div id="mydialog" title="Dialog">
+            <p>Welcome to our page.</p>
+        
+        </div>
+        
+        <div id="confirm" title="Leave the page?">
+            <p><span class="ui-icon ui-icon-alert"></span>You will lose all unsaved work. Are you sure?</p>
+        </div>
+        <button id="show">Open dialog</button>
+        
+        <button id="closepage">Leave page</button>
+    
+        <script>
+            $(function() {
+                $("#mydialog").dialog({
+                    autoOpen: false,
+                });
+                
+                $("#show").click(function () {
+                    $("#mydialog").dialog("open")
+                });
+                
+                $("#closepage").click(function() {
+                    $("#confirm").dialog("open")
+                })
+                
+                $("#confirm").dialog({
+                    autoOpen: false,
+                    modal: true,
+                    buttons: {
+                        "YES" : function() {
+                            window.history.back();
+                        },
+                        "NO" : function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                });
+                
+                $("button").button();
+            });
+        </script>
+    </body>
+
+
+
+
+</html>

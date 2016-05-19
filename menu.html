@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Menus</title>
+        
+        <style>
+            #cont { 
+                height: auto;
+                width: 100%;
+            }
+            
+            #continents {
+                width: 50%;
+            }
+        
+        </style>
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+    </head>
+    <body>
+        <div id="cont">
+            <div id="first">
+                <ul id="continents">
+                    <li>Europe</li>
+                        <ul>
+                         <li>France</li>
+                         <li>UK</li>
+                            <ul>
+                        <li>England</li>
+                        <li>Whales</li>
+                        <li>Scotland</li>
+                            </ul>
+                            <li>Spain</li>
+                        </ul>
+                    <li>Africa</li>
+                    <li>America</li>
+                    <li>Asia</li>
+                    <li>Australia</li>
+                </ul>
+            </div>
+        </div>
+    
+        <script>
+            $(function() {
+                $("#continents").menu();
+            })
+        
+        </script>
+    </body>
+</html>
